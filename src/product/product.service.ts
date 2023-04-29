@@ -26,17 +26,9 @@ export class ProductService {
     });
   }
 
-  async createProduct(data, id: string) {
+  async createProduct(data: NewProductDto) {
     return await this.prisma.product.create({
-      data: {
-        ...data,
-        category: {
-          connect: {
-            id,
-          },
-        },
-      },
+      data: { ...data, category: { connect: { id: data.category } } },
     });
   }
-  æ;
 }
