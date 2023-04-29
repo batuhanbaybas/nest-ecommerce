@@ -23,6 +23,6 @@ export class ProductController {
 
   @Post('create')
   async createProduct(@Body() data: NewProductDto) {
-    return await this.productService.createProduct(data, data.categoryId);
+    return await this.productService.createProduct(data);
   }
 }
