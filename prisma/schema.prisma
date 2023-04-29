@@ -22,6 +22,16 @@ model User {
   Basket    Basket[]
   Favorite  Favorite[]
   Adress    Adress[]
+  Role      Role?      @relation(fields: [roleId], references: [id])
+  roleId    String?
+}
+
+model Role {
+  id        String   @id @default(uuid())
+  name      String   @default("USER")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  User      User[]
 }
 
 model Product {
