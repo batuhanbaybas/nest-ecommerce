@@ -1,5 +1,6 @@
-import { Controller, Delete, Get, Param } from '@nestjs/common';
+import { Controller, Delete, Get, Param, UseGuards } from '@nestjs/common';
 import { CategoryService } from './category.service';
+import { JwtAutGuard } from 'src/auth/guard/jwt.guard';
 
 @Controller('category')
 export class CategoryController {
@@ -13,8 +14,9 @@ export class CategoryController {
   async getCategoryById(@Param('id') id: string) {
     await this.categoryService.getCategoryById(id);
   }
-
+  @UseGuards(JwtAutGuard)
   @Delete(':id')
-    async deleteCategoryById(@Param('id') id: string) {
+  async deleteCategoryById(@Param('id') id: string) {
     await this.categoryService.deleteCategoryById(id);
+  }
 }
