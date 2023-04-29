@@ -22,12 +22,12 @@ export class AuthService {
     }
     // compare password
     const isMatch = await argo.verify(user.password, data.password);
-    if (!isMatch) {
+    if (!isMatch && user) {
       throw new ForbiddenException('Password incorrect!');
     }
     delete user.password;
     // take access token
-    return this.signToken(user.id, user.email);
+    return await this.signToken(user.id, user.email);
   }
 
   async register(data) {
@@ -40,7 +40,7 @@ export class AuthService {
         },
       });
       delete data.password;
-      return this.signToken(user.id, user.email);
+      return await this.signToken(user.id, user.email);
     } catch (error) {
       if (error.code === 'P2002') {
         throw new ForbiddenException('User already exists!');
