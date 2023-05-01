@@ -15,10 +15,10 @@ export class FavoriteService {
     };
   }
 
-  async createFavorite(data: CreateFavoriteDto) {
+  async createFavorite(data: CreateFavoriteDto, userId: string) {
     await this.prisma.favorite.create({
       data: {
-        user: { connect: { id: data.userId } },
+        user: { connect: { id: userId } },
         product: { connect: { id: data.productId } },
       },
     });
