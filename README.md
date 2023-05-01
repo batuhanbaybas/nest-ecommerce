@@ -29,7 +29,7 @@ This will start the server on `http://localhost:3000`.
 
 The following environment variables need to be set before running the server:
 
-- `DATABASE_URL`: The URL of the MongoDB database.
+- `DATABASE_URL`: The URL of the Postgres database.
 - `JWT_SECRET`: The secret key used to sign JWT tokens.
 
 You can set these environment variables by creating a `.env` file in the root directory of the project and adding the key-value pairs in the format `KEY=VALUE`.
