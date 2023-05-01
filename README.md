@@ -1,6 +1,6 @@
 # Nest.js E-commerce Site Backend
 
-This repository contains the backend code for an e-commerce site built with Nest.js. The backend provides APIs for various functionalities of the site, such as managing products, orders, users, and payments.
+This repository contains the backend code for an e-commerce site built with Nest.js. The backend provides APIs for various functionalities of the site, such as managing products, favorite, auth,basket and user.
 
 ## Getting Started
 
