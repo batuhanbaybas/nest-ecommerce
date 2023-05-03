@@ -5,10 +5,8 @@ import { ProductModule } from './product/product.module';
 import { BasketModule } from './basket/basket.module';
 import { FavoriteModule } from './favorite/favorite.module';
 import { CategoryModule } from './category/category.module';
-import { OrderModule } from './order/order.module';
 import { PrismaModule } from './prisma/prisma.module';
 import { ConfigModule } from '@nestjs/config';
-import { ShopModule } from './shop/shop.module';
 
 @Module({
   imports: [
@@ -18,12 +16,10 @@ import { ShopModule } from './shop/shop.module';
     BasketModule,
     FavoriteModule,
     CategoryModule,
-    OrderModule,
     PrismaModule,
     ConfigModule.forRoot({
       isGlobal: true,
     }),
-    ShopModule,
   ],
 })
 export class AppModule {}
