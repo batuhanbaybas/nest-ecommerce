@@ -38,6 +38,3 @@ You can set these environment variables by creating a `.env` file in the root di
 
 If you want to contribute to the project, you can fork the repository, make your changes, and submit a pull request. Please make sure to follow the coding standards and write tests for your code.
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
