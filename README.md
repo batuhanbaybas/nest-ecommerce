@@ -25,6 +25,10 @@ npm run start:dev
 
 This will start the server on `http://localhost:3000`.
 
+## Docs
+
+The documentation is generated using [Swagger](https://swagger.io/). You can also access the documentation by visiting `http://localhost:3000/api` after "npm run start" command.
+
 ## Environment Variables
 
 The following environment variables need to be set before running the server:
@@ -37,4 +41,3 @@ You can set these environment variables by creating a `.env` file in the root di
 ## Contributing
 
 If you want to contribute to the project, you can fork the repository, make your changes, and submit a pull request. Please make sure to follow the coding standards and write tests for your code.
-
