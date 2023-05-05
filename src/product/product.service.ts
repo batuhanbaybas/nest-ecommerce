@@ -15,6 +15,20 @@ export class ProductService {
 
     return {
       data: product,
+      meta: {
+        page,
+        perPage: 10,
+        next:
+          page + 1 > (await this.prisma.product.count())
+            ? null
+            : `http://localhost:3000/products?page=${page + 1}`,
+        prev:
+          page - 1 == 0
+            ? null
+            : `http://localhost:3000/products?page=${page - 1}`,
+        totalItems: await this.prisma.product.count(),
+        totalPages: Math.ceil((await this.prisma.product.count()) / 10),
+      },
     };
   }
 
